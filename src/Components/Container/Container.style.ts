@@ -15,8 +15,11 @@ export const ContainerStyle = styled.div `
     background-color:#bda7c3;
     font-weight:600;
     
-    .left input{
-        font-size:1.15rem;
-        font-weight:600;
+    .error-div{
+        position:absolute;
+        color:rgb(179, 0, 33);
+        font-size:12px;
+        font-style:normal;
+        font-weight:normal;
     }
 `;

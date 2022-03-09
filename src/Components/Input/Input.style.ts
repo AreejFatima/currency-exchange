@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 
-export const InputStyle = styled.input `
+export const InputStyle = styled.div `
 
 padding:1.2rem;
 width:20rem;
@@ -15,5 +15,15 @@ color: #333;
 cursor: default;
 outline: none;
 transition: all 200ms ease;
+position:relative;
 
+input{
+    border:none;
+    font-weight:600;
+    font-size:16px;
+    margin-left:4px;
+}
+textarea:focus, input:focus{
+    outline: none;
+}
 `;

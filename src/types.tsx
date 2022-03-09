@@ -7,3 +7,9 @@ export interface itemType {
 export interface optionType {
   options: string[];
 }
+
+
+export interface symbolType{
+  name:string,
+  symbol:string
+}

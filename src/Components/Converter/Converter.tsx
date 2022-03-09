@@ -8,6 +8,8 @@ import { ButtonStyle } from "../Button/Button.style";
 import useInfo from "../../Hooks/useInfo";
 import Tabs from "../Tabs/Tabs";
 import Tab from "../Tabs/Tab";
+import { symbolType } from "../../types";
+import { find, isEmpty, propEq } from "ramda";
 
 import Result from "../Result/Result";
 import Table from "../Table/Table";
@@ -15,26 +17,35 @@ import { ConverterStyle } from "./Converter.style";
 import GraphWrapper from "../GraphWrapper/GraphWrapper";
 
 export default function Converter() {
-  const [from, setFrom] = useState<any>("pkr");
-  const [to, setTo] = useState<any>("usd");
+  const [from, setFrom] = useState<string>("pkr");
+  const [to, setTo] = useState<string>("usd");
   const [options, setOptions] = useState<string[]>([]);
   const [output, setOutput] = useState(0);
   const [input, setInput] = useState<any>(0);
   const [displayFrom, setDisplayFrom] = useState<string>("");
   const [displayTo, setDisplayTo] = useState<string>("");
   const [displayResult, setDisplayResult] = useState(false);
-
+  const [symbols, setSymbols] = useState<string[]>([]);
   const { data, status } = useCurrency(from);
-  const { status: infoStatus } = useInfo(setOptions);
+  const { status: infoStatus } = useInfo(setOptions, setSymbols);
 
   useEffect(() => {
     setDisplayResult(false);
   }, []);
 
+  ;
+
   const convert = (f: string, t: string) => {
     var rate = data[f][t];
     setOutput(input * rate);
     setDisplayResult(true);
+  };
+
+  const getSymbol = (country: string) => {
+    let item = symbols.find(
+      (item) => item.split("-")[0].trim().toLowerCase() === country
+    );
+    return item?.split("-")[1].trim();
   };
 
   const flip = () => {
@@ -61,14 +72,18 @@ export default function Converter() {
           <ContainerStyle>
             <div className="left">
               <h3>Amount</h3>
-              <InputStyle
-                type="text"
-                placeholder="Enter the amount"
-                onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                  setInput(e.target.value)
-                }
-                value={input}
-              />
+              <InputStyle>
+                <span>{getSymbol(from)}
+                <input
+                  type="text"
+                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                    setInput(e.target.value)
+                  }
+                  value={input}
+                />
+                </span>
+              </InputStyle>
+              <div className='error-div'>{isEmpty(input)?'Please enter valid amount':''}</div>
             </div>
             <div className="middle">
               <DropdownItem
@@ -114,9 +129,9 @@ export default function Converter() {
             {displayResult ? (
               <Result
                 heading={"Converted Amount:"}
-                data={`${input ? input : 0} ${from} = ${output.toFixed(
-                  4
-                )} ${to}`}
+                data={`${input ? input : 0} ${getSymbol(
+                  from
+                )} = ${output.toFixed(4)} ${getSymbol(to)}`}
               />
             ) : (
               ""
