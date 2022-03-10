@@ -7,7 +7,14 @@ export const WrapperStyle = styled.div `
     justify-content:space-evenly;
     margin-top:-3rem;
     margin-bottom:4rem;
+
+    @media (max-width: 376px){
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
 }
+
 
 .graph-wrapper{
     display:flex;

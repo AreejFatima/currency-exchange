@@ -95,6 +95,10 @@ display:inline-block;
 vertical-align:top;
 margin-left:19rem;
 
+@media (max-width: 376px){
+  margin-left:0
+}
+
 .Dropdown-control{
   font-size:14px;
   max-width:15rem;

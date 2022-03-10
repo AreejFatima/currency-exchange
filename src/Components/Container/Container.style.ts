@@ -14,6 +14,15 @@ export const ContainerStyle = styled.div `
     justify-items:center;
     background-color:#bda7c3;
     font-weight:600;
+
+    @media (max-width: 376px) {
+      width:90vw;
+      height:auto;
+      display:flex;
+      flex-direction:column;
+      }
+  
+  
     
     .error-div{
         position:absolute;

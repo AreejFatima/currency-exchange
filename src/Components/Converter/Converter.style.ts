@@ -15,8 +15,17 @@ overflow: hidden;
     font-size: 35px;
   }
 
+  .for-mobile{
+    overflow-x:auto;
+  }
+
   .switch{
-    margin-top:4rem;
+    margin-top:1.5rem;
+
+    @media (max-width: 376px){
+      margin-top:2rem;
+      
+    }
   }
   
   p,

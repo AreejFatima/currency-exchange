@@ -17,6 +17,11 @@ margin-left:30%;
 margin-top:1rem;
 margin-bottom:1rem;
 
+@media (max-width: 376px){
+    margin-left:0;
+   
+}
+
 &:hover{
     opacity:0.9;
 }

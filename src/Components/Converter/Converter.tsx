@@ -100,7 +100,7 @@ export default function Converter() {
             </div>
             <div className="switch">
               <MdOutlineSwapHorizontalCircle
-                size="50px"
+                size="50"
                 onClick={() => {
                   flip();
                 }}

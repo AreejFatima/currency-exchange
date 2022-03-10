@@ -72,37 +72,39 @@ function Table(props: any) {
           </div>
         )}
       </OperationStyle>
-      <TableStyle>
-        <thead>
-          <tr>
-            <th>Country</th>
-            <th>Amount</th>
-            <th>Change</th>
-            <th>Chart</th>
-            <th>Operation</th>
-          </tr>
-        </thead>
+      <div className='for-mobile'>
+        <TableStyle>
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Amount</th>
+              <th>Change</th>
+              <th>Chart</th>
+              <th>Operation</th>
+            </tr>
+          </thead>
 
-        <tbody>
-          <HeaderRow
-            options={options}
-            onChange={handleChange}
-            value={displayFrom}
-          />
-          {tableData &&
-            tableData.map((item) => {
-              let temp = item.split("-")[0].trim().toLowerCase();
-              return (
-                <TableRow
-                  from={from}
-                  to={temp}
-                  country={item}
-                  deleteCountry={deleteCountry}
-                />
-              );
-            })}
-        </tbody>
-      </TableStyle>
+          <tbody>
+            <HeaderRow
+              options={options}
+              onChange={handleChange}
+              value={displayFrom}
+            />
+            {tableData &&
+              tableData.map((item) => {
+                let temp = item.split("-")[0].trim().toLowerCase();
+                return (
+                  <TableRow
+                    from={from}
+                    to={temp}
+                    country={item}
+                    deleteCountry={deleteCountry}
+                  />
+                );
+              })}
+          </tbody>
+        </TableStyle>
+      </div>
     </>
   );
 }
