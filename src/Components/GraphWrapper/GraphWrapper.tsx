@@ -4,9 +4,8 @@ import DropdownItem from "../Dropdown/DropdownItem";
 import { makeLiveChartData } from "../../utils";
 import { isEmpty } from "ramda";
 import { WrapperStyle } from "./GraphWrapper.style";
-import { optionType } from "../../types";
 
-function GraphWrapper(props: optionType) {
+function GraphWrapper(props:any) {
   const [from, setFrom] = useState<string>("pkr");
   const [to, setTo] = useState<string>("usd");
   const [displayFrom, setDisplayFrom] = useState<string>("");
@@ -14,7 +13,7 @@ function GraphWrapper(props: optionType) {
   const [dataToPlot, setDataToPlot] = useState({});
   const [days, setDays] = useState(20);
 
-  const { options } = props;
+  const { options,flagOptions} = props;
 
   let dayArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40];
 
@@ -37,7 +36,7 @@ function GraphWrapper(props: optionType) {
     <WrapperStyle>
       <div className="graph-header">
         <DropdownItem
-          options={options}
+          options={flagOptions}
           onChange={(e: any) => {
             let temp = e.value;
             setFrom(temp.split("-")[0].trim().toLowerCase());
@@ -49,7 +48,7 @@ function GraphWrapper(props: optionType) {
         />
 
         <DropdownItem
-          options={options}
+          options={flagOptions}
           onChange={(e: any) => {
             let temp = e.value;
             setTo(temp.split("-")[0].trim().toLowerCase());

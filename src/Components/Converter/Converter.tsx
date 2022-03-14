@@ -20,20 +20,25 @@ export default function Converter() {
   const [from, setFrom] = useState<string>("pkr");
   const [to, setTo] = useState<string>("usd");
   const [options, setOptions] = useState<string[]>([]);
+  const [flagOptions, setFlagOptions] = useState<any[]>([]);
   const [output, setOutput] = useState(0);
   const [input, setInput] = useState<any>(0);
   const [displayFrom, setDisplayFrom] = useState<string>("");
   const [displayTo, setDisplayTo] = useState<string>("");
   const [displayResult, setDisplayResult] = useState(false);
   const [symbols, setSymbols] = useState<string[]>([]);
+
+  //Data from hooks
   const { data, status } = useCurrency(from);
-  const { status: infoStatus } = useInfo(setOptions, setSymbols);
+  const { status: infoStatus } = useInfo(
+    setOptions,
+    setSymbols,
+    setFlagOptions
+  );
 
   useEffect(() => {
     setDisplayResult(false);
   }, []);
-
-  ;
 
   const convert = (f: string, t: string) => {
     var rate = data[f][t];
@@ -73,21 +78,24 @@ export default function Converter() {
             <div className="left">
               <h3>Amount</h3>
               <InputStyle>
-                <span>{getSymbol(from)}
-                <input
-                  type="text"
-                  onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                    setInput(e.target.value)
-                  }
-                  value={input}
-                />
+                <span>
+                  {getSymbol(from)}
+                  <input
+                    type="text"
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      setInput(e.target.value)
+                    }
+                    value={input}
+                  />
                 </span>
               </InputStyle>
-              <div className='error-div'>{isEmpty(input)?'Please enter valid amount':''}</div>
+              <div className="error-div">
+                {isEmpty(input) ? "Please enter valid amount" : ""}
+              </div>
             </div>
             <div className="middle">
               <DropdownItem
-                options={options}
+                options={flagOptions}
                 onChange={(e: any) => {
                   let temp = e.value;
                   setFrom(temp.split("-")[0].trim().toLowerCase());
@@ -108,7 +116,7 @@ export default function Converter() {
             </div>
             <div className="right">
               <DropdownItem
-                options={options}
+                options={flagOptions}
                 onChange={(e: any) => {
                   let temp = e.value;
                   setTo(temp.split("-")[0].trim().toLowerCase());
@@ -137,10 +145,10 @@ export default function Converter() {
               ""
             )}
           </ContainerStyle>
-          <Table options={options} />
+          <Table options={options}  flagOptions={flagOptions}/>
         </Tab>
         <Tab label="Charts">
-          <GraphWrapper options={options} />
+          <GraphWrapper options={options}  flagOptions={flagOptions}/>
         </Tab>
       </Tabs>
     </ConverterStyle>

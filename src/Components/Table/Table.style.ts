@@ -87,6 +87,11 @@ export const TableStyle = styled.div `
   text-overflow: ellipsis;
 }
 
+.row-flags{
+  margin-right:1rem;
+  
+}
+
 `;
 
 export const OperationStyle = styled.div `

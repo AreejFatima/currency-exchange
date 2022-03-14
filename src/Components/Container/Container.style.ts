@@ -9,11 +9,11 @@ export const ContainerStyle = styled.div `
     height:auto;
     width:90rem;
     margin: 0 auto;
-    border: 1px solid purple;
     border-radius:10px;
     justify-items:center;
     background-color:#bda7c3;
     font-weight:600;
+    box-shadow: 5px 5px 15px 1px rgb(102 89 115);
 
     @media (max-width: 376px) {
       width:90vw;

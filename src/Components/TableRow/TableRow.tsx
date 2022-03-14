@@ -5,12 +5,13 @@ import { makeChartData } from "../../utils";
 import ExchangeGraph from "../Graph/ExchangeGraph";
 import { isEmpty } from "ramda";
 import { TiDeleteOutline } from "react-icons/ti";
+import ReactCountryFlag from "react-country-flag";
 
 interface TablePropsType {
   country: "string";
   from: "string";
   to: "string";
-  deleteCountry: (country:string)=>void;
+  deleteCountry: (country: string) => void;
 }
 
 function TableRow(props: TablePropsType) {
@@ -71,7 +72,22 @@ function TableRow(props: TablePropsType) {
 
   return (
     <tr>
-      <td>{country}</td>
+      <td>
+        <ReactCountryFlag
+          countryCode={country.split("-")[0].slice(0, 2).trim().toUpperCase()}
+          svg
+          cdnUrl="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/"
+          cdnSuffix="svg"
+          title={country.split("-")[0].slice(0, 2).trim().toUpperCase()}
+          className="row-flags"
+          style={{
+            width: "1.9em",
+            height: "1.9em",
+            borderRadius: "50%",
+          }}
+        />
+        {country}
+      </td>
       <td>{amount}</td>
       <td>{(1 - amount).toFixed(1)}%</td>
       <td>

@@ -8,13 +8,12 @@ import { isEmpty } from "ramda";
 import { itemType } from "../../types";
 
 function Table(props: any) {
-  const { options } = props;
+  const { options,flagOptions } = props;
   const [from, setFrom] = useState<any>("usd");
   const [displayFrom, setDisplayFrom] = useState<string>("");
   const [clicked, setClicked] = useState(false);
   const [addedRowData, setAddedRowData] = useState("");
   const [addedCountry, setAddedCountry] = useState("");
-  const [isAdded, setIsAdded] = useState(false);
   const [tableData, setTableData] = useState<any[]>([]);
 
   let displayRows = options.slice(0, 4);
@@ -60,7 +59,7 @@ function Table(props: any) {
       <OperationStyle onClick={() => setClicked(true)}>
         {clicked ? (
           <DropdownItem
-            options={options}
+            options={flagOptions}
             onChange={(e: any) => addNewRow(e)}
             value={addedCountry}
             placeholder="Select Country"
@@ -89,6 +88,7 @@ function Table(props: any) {
               options={options}
               onChange={handleChange}
               value={displayFrom}
+              flagOptions={flagOptions}
             />
             {tableData &&
               tableData.map((item) => {

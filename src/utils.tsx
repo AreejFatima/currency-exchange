@@ -55,7 +55,6 @@ export const makeLiveChartData = async (
   from: string,
   to: string
 ) => {
-  let obj = {};
   let dataLabels: any[] = [];
   let dataValue: any[] = [];
   const tempData = await fetchLastNDaysData(n, from, to);
@@ -63,7 +62,7 @@ export const makeLiveChartData = async (
     dataLabels.push(i.date);
     dataValue.push(i[to]);
   });
-  obj = {
+  return {
     labels: dataLabels,
     datasets: [
       {
@@ -80,5 +79,4 @@ export const makeLiveChartData = async (
       },
     ],
   };
-  return obj;
 };
