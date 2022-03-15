@@ -1,5 +1,5 @@
 import useCurrency from "../../Hooks/useCurrency";
-import { useState, ChangeEvent, useEffect } from "react";
+import { useState, ChangeEvent, useEffect} from "react";
 import { MdOutlineSwapHorizontalCircle } from "react-icons/md";
 import DropdownItem from "../Dropdown/DropdownItem";
 import { ContainerStyle } from "../Container/Container.style";
@@ -8,8 +8,7 @@ import { ButtonStyle } from "../Button/Button.style";
 import useInfo from "../../Hooks/useInfo";
 import Tabs from "../Tabs/Tabs";
 import Tab from "../Tabs/Tab";
-import { symbolType } from "../../types";
-import { find, isEmpty, propEq } from "ramda";
+import { isEmpty } from "ramda";
 
 import Result from "../Result/Result";
 import Table from "../Table/Table";
@@ -62,6 +61,8 @@ export default function Converter() {
     setDisplayTo(tempDisplay);
     output === 0 ? setOutput(0) : setOutput((input / output) * input);
   };
+
+  
 
   if (status === "loading" || infoStatus === "loading") {
     return <div>Loading...</div>;
@@ -145,10 +146,10 @@ export default function Converter() {
               ""
             )}
           </ContainerStyle>
-          <Table options={options}  flagOptions={flagOptions}/>
+          <Table options={options} flagOptions={flagOptions} />
         </Tab>
         <Tab label="Charts">
-          <GraphWrapper options={options}  flagOptions={flagOptions}/>
+          <GraphWrapper options={options} flagOptions={flagOptions} />
         </Tab>
       </Tabs>
     </ConverterStyle>

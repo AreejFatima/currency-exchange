@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import ExchangeGraph from "../Graph/ExchangeGraph";
 import DropdownItem from "../Dropdown/DropdownItem";
 import { makeLiveChartData } from "../../utils";

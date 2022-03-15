@@ -92,6 +92,12 @@ export const TableStyle = styled.div `
   
 }
 
+.country-row{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 `;
 
 export const OperationStyle = styled.div `

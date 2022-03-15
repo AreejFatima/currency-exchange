@@ -1,14 +1,13 @@
-import React, { useState, useEffect, ChangeEvent } from "react";
+import React, { useState, useEffect } from "react";
 import HeaderRow from "../HeaderRow/HeaderRow";
 import TableRow from "../TableRow/TableRow";
 import { TableStyle, OperationStyle } from "./Table.style";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import DropdownItem from "../Dropdown/DropdownItem";
 import { isEmpty } from "ramda";
-import { itemType } from "../../types";
 
 function Table(props: any) {
-  const { options,flagOptions } = props;
+  const { options, flagOptions } = props;
   const [from, setFrom] = useState<any>("usd");
   const [displayFrom, setDisplayFrom] = useState<string>("");
   const [clicked, setClicked] = useState(false);
@@ -71,7 +70,7 @@ function Table(props: any) {
           </div>
         )}
       </OperationStyle>
-      <div className='for-mobile'>
+      <div className="for-mobile">
         <TableStyle>
           <thead>
             <tr>

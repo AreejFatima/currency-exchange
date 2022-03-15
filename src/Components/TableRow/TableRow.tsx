@@ -72,7 +72,7 @@ function TableRow(props: TablePropsType) {
 
   return (
     <tr>
-      <td>
+      <td className='country-row'>
         <ReactCountryFlag
           countryCode={country.split("-")[0].slice(0, 2).trim().toUpperCase()}
           svg
