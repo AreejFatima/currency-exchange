@@ -1,6 +1,7 @@
 import DropdownItem from "../Dropdown/DropdownItem";
 import ReactCountryFlag from "react-country-flag";
 import React, { useState } from "react";
+import {ImArrowDown} from 'react-icons/im'
 
 function HeaderRow(props: any) {
   const { options, onChange, value, flagOptions } = props;
@@ -41,7 +42,7 @@ function HeaderRow(props: any) {
           options[140]
         )}
       </td>
-      <td>1</td>
+      <td>< div className='amount'> 1</div> <ImArrowDown className='arrow' size={32}/></td>
       <td></td>
       <td></td>
       <td></td>

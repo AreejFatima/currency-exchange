@@ -37,6 +37,9 @@ export const TableStyle = styled.div `
 
   tr:hover{
     background:linear-gradient(45deg, #52376ea6, transparent);
+    .arrow{
+      display:none;
+    }
   }
 
 .delete-button{
@@ -96,6 +99,19 @@ export const TableStyle = styled.div `
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.arrow{
+  margin-top:7px;
+  position:absolute;
+color:#bda7c3;
+margin-left:-10px;
+}
+.amount{
+  position:relative;
+  font-weight:600;
+  font-size:larger;
+  
 }
 
 `;

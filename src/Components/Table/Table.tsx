@@ -6,6 +6,7 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import DropdownItem from "../Dropdown/DropdownItem";
 import { isEmpty } from "ramda";
 
+
 function Table(props: any) {
   const { options, flagOptions } = props;
   const [from, setFrom] = useState<any>("usd");
