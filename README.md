@@ -40,7 +40,7 @@ To Visit App:
 <https://github.com/fawazahmed0/currency-api>
 
 ## Packages
-- [react-dropdown]('https://www.npmjs.com/package/react-dropdown')
+- [react-dropdown](https://www.npmjs.com/package/react-dropdown)
 
 ## Project Structure:
 - Src
