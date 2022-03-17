@@ -40,7 +40,15 @@ To Visit App:
 <https://github.com/fawazahmed0/currency-api>
 
 ## Packages
+- [react-query](https://www.npmjs.com/package/react-query)
+- [react-icons](https://www.npmjs.com/package/react-icons)
+- [styled-components](https://www.npmjs.com/package/@types/styled-components)
+- [react-country-flag](https://www.npmjs.com/package/react-country-flag)
+- [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2)
 - [react-dropdown](https://www.npmjs.com/package/react-dropdown)
+- [react-moment](https://www.npmjs.com/package/react-moment)
+- [ramda](https://www.npmjs.com/package/ramda)
+
 
 ## Project Structure:
 - Src
