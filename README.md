@@ -1,6 +1,20 @@
 # Currency-Converter
 
 A simple currency converter application built using React Js (Hooks, React Query, Styled Componen), Typescript, HTML & CSS. 
+
+## Basic Features
+ - An input field to enter the amount to be converted
+ - Dropdowns to select the source and target country's currencies
+ - A swap button to swap the source and target countries to display the converse results.
+ - A tabular view of the live currency exchange rates
+   - Add Button along with a dropdown for adding more country rows in the table
+   - Header Row with a dropdown for selecting the source country corresponding to which exchange rates of the other country rows are displayed
+   - Delete icon to delete any row from the table
+   - live currency exchange charts corresponding to each country row
+ - A graphical view of the live currency exchange rates
+   - Dropdowns to select the source and target countries
+   - Input field to select the no. of days corresponding to which graph is displayed
+   - A graph with days on the horizondal-axis and exchange rates on the y-axis
 ## Installation and Setup Instructions
 
 Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
