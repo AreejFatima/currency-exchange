@@ -96,3 +96,5 @@ To Visit App:
   - config.scss
   - App.css
   - App.tsx
+## Currency Converter
+![demo](https://user-images.githubusercontent.com/62887754/158808563-99e79960-c52b-4695-9d8e-a6b791bdfadc.gif)
