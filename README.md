@@ -1,6 +1,6 @@
 # Currency-Converter
 
-A simple currency converter application built using React Js (Hooks, React Query, Styled Componen), Typescript, HTML & CSS. 
+A simple responsive currency converter application  built using React Js (Hooks, React Query, Styled Componen), Typescript, HTML & CSS. 
 
 ## Basic Features
  - An input field to enter the amount to be converted
@@ -38,6 +38,9 @@ To Visit App:
 
 ## API 
 <https://github.com/fawazahmed0/currency-api>
+
+## Packages
+- [react-dropdown]('https://www.npmjs.com/package/react-dropdown')
 
 ## Project Structure:
 - Src
