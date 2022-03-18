@@ -4,6 +4,7 @@ import TableRow from "../TableRow/TableRow";
 import { TableStyle, OperationStyle } from "./Table.style";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import DropdownItem from "../Dropdown/DropdownItem";
+import {reactLocalStorage} from 'reactjs-localstorage';
 import { isEmpty } from "ramda";
 
 
@@ -31,17 +32,16 @@ function Table(props: any) {
   };
 
   useEffect(() => {
-    const retrieved: any = sessionStorage.getItem("data");
+    const retrieved: any = reactLocalStorage.get("data");
     if (!isEmpty(JSON.parse(retrieved))) {
       setTableData(JSON.parse(retrieved));
     } else {
       setTableData(displayRows);
-      sessionStorage.setItem("data", JSON.stringify(displayRows));
     }
   }, []);
 
   useEffect(() => {
-    sessionStorage.setItem("data", JSON.stringify(tableData));
+    reactLocalStorage.set("data", JSON.stringify(tableData));
   }, [tableData]);
 
   const addNewRow = (e: any) => {
