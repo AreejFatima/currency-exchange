@@ -1,46 +1,100 @@
-# Getting Started with Create React App
+# Currency-Converter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple responsive currency converter application  built using React Js (Hooks, React Query, Styled Componen), Typescript, HTML & CSS. 
 
-## Available Scripts
+## Basic Features
+ - An input field to enter the amount to be converted
+ - Dropdowns to select the source and target country's currencies
+ - A swap button to swap the source and target countries to display the converse results.
+ - A tabular view of the live currency exchange rates
+   - Add Button along with a dropdown for adding more country rows in the table
+   - Header Row with a dropdown for selecting the source country corresponding to which exchange rates of the other country rows are displayed
+   - Delete icon to delete any row from the table
+   - live currency exchange charts corresponding to each country row
+ - A graphical view of the live currency exchange rates
+   - Dropdowns to select the source and target countries
+   - Input field to select the no. of days corresponding to which graph is displayed
+   - A graph with days on the horizondal-axis and exchange rates on the y-axis
+## Installation and Setup Instructions
 
-In the project directory, you can run:
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
 
-### `npm start`
+Installation:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+npm install
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To Start Server:
 
-### `npm test`
+```bash
+npm run start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To Visit App:
 
-### `npm run build`
+`localhost:3000/` 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## API 
+<https://github.com/fawazahmed0/currency-api>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Packages
+- [react-query](https://www.npmjs.com/package/react-query)
+- [react-icons](https://www.npmjs.com/package/react-icons)
+- [styled-components](https://www.npmjs.com/package/@types/styled-components)
+- [react-country-flag](https://www.npmjs.com/package/react-country-flag)
+- [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2)
+- [react-dropdown](https://www.npmjs.com/package/react-dropdown)
+- [react-moment](https://www.npmjs.com/package/react-moment)
+- [ramda](https://www.npmjs.com/package/ramda)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Structure:
+- Src
+  - Components
+    - Button
+      - Button.style.ts
+    - Container
+      - Container.style.ts
+    - Dropdown
+      - Dropdown.style.ts
+      - DropdownItem.tsx
+    - Converter
+      - Converter.style.ts
+      - Converter.tsx
+    - Graph
+      - ExchangeGraph.style.ts
+      - ExchangeGraph.tsx
+    - GraphWrapper
+      - GraphWrapper.style.ts
+      - GraphWrapper.tsx
+    - HeaderRow
+      - HeaderRow.tsx
+    - Input
+      - Input.style.ts
+    - Result
+      - Result.style.ts
+      - Result.tsx
+    - Table
+      - Table.style.ts
+      - Table.tsx
+    - TableRow
+      -TableRow.tsx
+    - Tabs
+      - Tabs.style.ts
+      - Tabs.tsx
+      - Tab.tsx
+      - TabButtons.tsx
+  - Hooks
+    - useCurrency
+    - useInfo
+  - api
+    - currencyApi.tsx
+  - utils.tsx
+  - types.tsx
+  - config.scss
+  - App.css
+  - App.tsx
+## Currency Converter
+![demo](https://user-images.githubusercontent.com/62887754/158808563-99e79960-c52b-4695-9d8e-a6b791bdfadc.gif)
