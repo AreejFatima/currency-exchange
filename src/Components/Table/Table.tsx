@@ -31,7 +31,7 @@ function Table(props: any) {
   };
 
   useEffect(() => {
-    const retrieved: any = localStorage.getItem("data");
+    const retrieved: any = sessionStorage.getItem("data");
     if (!isEmpty(JSON.parse(retrieved))) {
       setTableData(JSON.parse(retrieved));
     } else {
@@ -40,7 +40,7 @@ function Table(props: any) {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("data", JSON.stringify(tableData));
+    sessionStorage.setItem("data", JSON.stringify(tableData));
   }, [tableData]);
 
   const addNewRow = (e: any) => {
