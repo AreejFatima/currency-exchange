@@ -36,6 +36,7 @@ function Table(props: any) {
       setTableData(JSON.parse(retrieved));
     } else {
       setTableData(displayRows);
+      sessionStorage.setItem("data", JSON.stringify(displayRows));
     }
   }, []);
 
