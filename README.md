@@ -1,6 +1,8 @@
 # Currency-Converter
 
 A simple responsive currency converter application  built using React Js (Hooks, React Query, Styled Componen), Typescript, HTML & CSS. Live demo of the app can be found [here](https://areejfatima.github.io/currency-exchange/) .
+
+### 
 ![demo](https://user-images.githubusercontent.com/62887754/158808563-99e79960-c52b-4695-9d8e-a6b791bdfadc.gif)
 
 ## Basic Features
