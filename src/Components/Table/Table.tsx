@@ -4,9 +4,8 @@ import TableRow from "../TableRow/TableRow";
 import { TableStyle, OperationStyle } from "./Table.style";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import DropdownItem from "../Dropdown/DropdownItem";
-import {reactLocalStorage} from 'reactjs-localstorage';
+import { reactLocalStorage } from "reactjs-localstorage";
 import { isEmpty } from "ramda";
-
 
 function Table(props: any) {
   const { options, flagOptions } = props;
@@ -49,7 +48,7 @@ function Table(props: any) {
     setAddedRowData(temp.split("-")[0].trim().toLowerCase());
     setAddedCountry(temp);
     setClicked(false);
-    const tempData = tableData.slice();
+    const tempData = tableData ? tableData.slice() : [];
     tempData.push(temp);
     setTableData(tempData);
   };
